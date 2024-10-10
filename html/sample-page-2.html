@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>London Housing Association | Dashboard</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../assets/images/logos/favicon.png"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.min.css" />
+    <style>
+      .statistics .box i {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+      }
+
+      .statis .box {
+        position: relative;
+        overflow: hidden;
+        border-radius: 3px;
+      }
+
+      .statis .box h3:after {
+        content: "";
+        height: 2px;
+        width: 70%;
+        margin: auto;
+        background-color: rgba(255, 255, 255, 0.12);
+        display: block;
+        margin-top: 10px;
+      }
+
+      .statis .box i {
+        position: absolute;
+        height: 70px;
+        width: 70px;
+        font-size: 22px;
+        padding: 15px;
+        top: -25px;
+        left: -25px;
+        background-color: rgba(255, 255, 255, 0.15);
+        line-height: 60px;
+        text-align: right;
+        border-radius: 50%;
+      }
+
+      .statis h3 {
+        color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
+      }
+
+      .statis .row {
+        justify-content: space-around;
+      }
+
+      .counter {
+        transition: transform 0.3s;
+        font-size: 1.7rem;
+        font-weight: 600;
+      }
+
+      .counter span {
+        display: inline-block;
+        transition: transform 0.3s;
+      }
+      .lead {
+        font-size: 1.09775rem;
+        font-weight: 400;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--  Body Wrapper -->
+    <div
+      class="page-wrapper"
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin6"
+      data-sidebartype="full"
+      data-sidebar-position="fixed"
+      data-header-position="fixed"
+    >
+      <!-- Sidebar Start -->
+      <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div>
+          <div
+            class="brand-logo d-flex align-items-center justify-content-between"
+          >
+            <div
+              class="close-btn d-xl-none d-block sidebartoggler cursor-pointer"
+              id="sidebarCollapse"
+            >
+              <i class="ti ti-x fs-8"></i>
+            </div>
+          </div>
+          <!-- Sidebar navigation-->
+          <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+            <ul id="sidebarnav">
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu">Home</span>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./sample-page.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="ti ti-layout-dashboard"></i>
+                  </span>
+                  <span class="hide-menu">Dashboard</span>
+                </a>
+              </li>
+
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu">AUTH</span>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./index.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="ti ti-logout"></i>
+                  </span>
+                  <span class="hide-menu">Logout</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+      </aside>
+      <!--  Sidebar End -->
+      <!--  Main wrapper -->
+      <div class="body-wrapper">
+        <header class="app-header">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <ul class="navbar-nav">
+              <li class="nav-item d-block d-xl-none">
+                <a
+                  class="nav-link sidebartoggler nav-icon-hover"
+                  id="headerCollapse"
+                  href="javascript:void(0)"
+                >
+                  <i class="ti ti-menu-2"></i>
+                </a>
+              </li>
+              <li class="nav-item d-none">
+                <a class="nav-link nav-icon-hover" href="javascript:void(0)">
+                  <i class="ti ti-bell-ringing"></i>
+                  <div class="notification bg-primary rounded-circle"></div>
+                </a>
+              </li>
+            </ul>
+            <div
+              class="navbar-collapse justify-content-end px-0"
+              id="navbarNav"
+            >
+              <ul
+                class="navbar-nav flex-row ms-auto align-items-center justify-content-end"
+              >
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link nav-icon-hover"
+                    href="javascript:void(0)"
+                    id="drop2"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="../assets/images/profile/user-1.jpg"
+                      alt=""
+                      width="35"
+                      height="35"
+                      class="rounded-circle"
+                    />
+                  </a>
+                  <div
+                    class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
+                    aria-labelledby="drop2"
+                  >
+                    <div class="message-body">
+                      <a
+                        href="./index.html"
+                        class="btn btn-outline-primary mx-3 mt-2 d-block"
+                        >Logout</a
+                      >
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+        <div class="container-fluid">
+          <div class="card">
+            <div class="card-body">
+              <section class="statistics mt-4">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <div
+                      class="box d-flex rounded-2 align-items-center mb-4 mb-lg-0 p-3"
+                    >
+                      <i
+                        class="ti ti-home h1 text-center bg-success rounded-circle text-bg-dark"
+                      ></i>
+                      <div class="ms-3">
+                        <div class="d-flex align-items-center">
+                          <h3 class="mb-0 counter" data-target="125220">0</h3>
+                          <span class="d-block ms-2">Properties</span>
+                        </div>
+                        <p class="fs-normal mb-0">
+                          Properties with Smart Meter
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div
+                      class="box d-flex rounded-2 align-items-center mb-4 mb-lg-0 p-3"
+                    >
+                      <i
+                        class="ti ti-building-factory h1 text-center bg-danger rounded-circle text-bg-dark"
+                      ></i>
+                      <div class="ms-3">
+                        <div class="d-flex align-items-center">
+                          <!-- <h3 class="mb-0">3,240 </h3> -->
+                          <h3 class="mb-0 counter" data-target="300528">0</h3>
+                          <span class="d-block ms-2"
+                            >CO<sub>2</sub> Generated</span
+                          >
+                        </div>
+                        <p class="fs-normal mb-0">Smart Meter data only</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="box d-flex rounded-2 align-items-center p-3">
+                      <i
+                        class="ti ti-currency-pound h1 text-center bg-warning rounded-circle text-bg-dark"
+                      ></i>
+                      <div class="ms-3">
+                        <div class="d-flex align-items-center">
+                          <!-- <h3 class="mb-0">2.9M</h3> -->
+                          <h3 class="mb-0 counter" data-target="15861600">0</h3>
+                          <span class="d-block ms-2">Cost of Energy</span>
+                        </div>
+                        <p class="fs-normal mb-0">Smart Meter data only</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <hr />
+              <div class="row">
+                <section class="statis mt-4 text-center text-light">
+                  <div class="row">
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                      <div class="box bg-primary p-3">
+                        <i class="ti ti-home-up"></i>
+                        <!-- <h3>554</h3> -->
+                        <h3 class="counter" data-target="55421">0</h3>
+                        <p class="lead">Properties requiring Retrofit work</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                      <div class="box bg-danger p-3">
+                        <i class="ti ti-plant"></i>
+                        <!-- <h3>2,100</h3> -->
+                        <h3 class="counter" data-target="21000">0</h3>
+                        <p class="lead">
+                          Potential CO<sub>2</sub> Saving per year
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                      <div class="box bg-warning p-3">
+                        <i class="ti ti-currency-pound"></i>
+                        <!-- <h3>1.2M</h3> -->
+                        <h3 class="counter" data-target="12070000">0</h3>
+                        <p class="lead">
+                          Potential Energy cost saving per year
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="statis mt-4 text-center text-light">
+                  <div class="row">
+                    <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                      <div class="box bg-success p-3">
+                        <i class="ti ti-wall"></i>
+                        <!-- <h3>554</h3> -->
+                        <h3 class="counter" data-target="14662">0</h3>
+                        <p class="lead">Solid Wall Properties With Loft</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                      <div class="box bg-primary p-3">
+                        <i class="ti ti-assembly"></i>
+                        <!-- <h3>754</h3> -->
+                        <h3 class="counter" data-target="17544">0</h3>
+                        <p class="lead">Cavity Wall Properties with Loft</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                      <div class="box bg-danger p-3">
+                        <i class="ti ti-building"></i>
+                        <!-- <h3>245</h3> -->
+                        <h3 class="counter" data-target="2458">0</h3>
+                        <p class="lead">Number of flats</p>
+                        <br />
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="statis mt-4 text-center text-light">
+                  <div class="row">
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                      <div class="box bg-danger p-3">
+                        <i class="ti ti-letter-a"></i>
+                        <!-- <h3>245</h3> -->
+                        <h3 class="counter" data-target="8225">0</h3>
+                        <p class="lead">
+                          Properties with EPC ratings between A & C
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                      <div class="box bg-warning p-3">
+                        <i class="ti ti-letter-d"></i>
+                        <!-- <h3>454</h3> -->
+                        <h3 class="counter" data-target="3457">0</h3>
+                        <p class="lead">
+                          Properties with EPC ratings between D & E
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                      <div class="box bg-success p-3">
+                        <i class="ti ti-letter-f"></i>
+                        <!-- <h3>654</h3> -->
+                        <h3 class="counter" data-target="6504">0</h3>
+                        <p class="lead">Properties with EPC ratings F</p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <script src="../assets/js/app.min.js"></script>
+    <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+
+    <script>
+      function formatNumber(num) {
+        if (num >= 1e6) {
+          return (num / 1e6).toFixed(1) + "M";
+        } else if (num >= 1e3) {
+          return num.toLocaleString();
+        }
+        return num.toString();
+      }
+
+      function animateCount($element, targetNumber, duration) {
+        const startNumber = 0;
+        const startTime = performance.now();
+
+        function updateCount(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const currentNumber = Math.floor(
+            startNumber + progress * (targetNumber - startNumber)
+          );
+
+          $element.text(formatNumber(currentNumber));
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCount);
+          }
+        }
+
+        requestAnimationFrame(updateCount);
+      }
+
+      $(document).ready(function () {
+        $(".counter").each(function () {
+          const target = Number($(this).data("target"));
+          animateCount($(this), target, 1000);
+        });
+      });
+    </script>
+  </body>
+</html>
