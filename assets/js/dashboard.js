@@ -3,19 +3,22 @@ $(function () {
   // Profit
   // =====================================
   var chart = {
-    series: [{ name: "Saving this year:", data: [9520, 12400, 18000, 21000] }],
+    // series: [{ name: "Saving this year:", data: [9520, 12400, 18000, 21000] }],
+    series: [{ name: "Saving this year:", data: [809, 2000, 3268, 6255] }],
 
     chart: {
       type: "bar",
       height: 115,
       offsetX: -15,
       toolbar: { show: false },
-      foreColor: "#f6f9fc",
+      // foreColor: "#f6f9fc",
+      foreColor: "lightgrey",
       fontFamily: "inherit",
       sparkline: { enabled: false },
     },
 
-    colors: ["#f6f9fc"],
+    // colors: ["#f6f9fc"],
+    colors: ["#fa896b"],
 
     plotOptions: {
       bar: {
@@ -53,7 +56,8 @@ $(function () {
     xaxis: {
       show: false,
       type: "categories",
-      categories: ["2020", "2021", "2022", "2023"],
+      // categories: ["2020", "2021", "2022", "2023"],
+      categories: ["2023", "2024", "2025", "2026"],
       labels: {
         style: { cssClass: "red--text lighten-1--text fill-color" },
       },
@@ -62,14 +66,16 @@ $(function () {
     yaxis: {
       show: false,
       min: 0,
-      max: 24000,
+      // max: 24000,
+      max: 7000,
       tickAmount: 4,
       labels: {
         style: {
-          cssClass: "red--text lighten-1--text fill-color",
+          // cssClass: "red--text lighten-1--text fill-color",
         },
         style: {
-          color: "#ffffff", // Set Y-axis label color to white
+          // color: "#ffffff",
+          // color: "#ffffff",
         },
       },
     },
@@ -80,7 +86,7 @@ $(function () {
       colors: ["transparent"],
     },
 
-    tooltip: { theme: "dark" },
+    // tooltip: { theme: "dark" },
 
     responsive: [
       {
@@ -104,10 +110,11 @@ $(function () {
   // =====================================
   var breakup = {
     color: "#adb5bd",
-    series: [55421, 70799],
+    // series: [55421, 70799],
+    series: [4500, 5500],
     labels: ["Retrofit work", "Good condition"],
     chart: {
-      width: 180,
+      width: 185,
       type: "pie",
       fontFamily: "Plus Jakarta Sans', sans-serif",
       foreColor: "#adb0bb",
@@ -132,7 +139,8 @@ $(function () {
     legend: {
       show: false,
     },
-    colors: ["#fa896b", "#F9F9FD"],
+    // colors: ["#fa896b", "#F9F9FD"],
+    colors: ["#fa896b", "lightgrey"],
 
     responsive: [
       {
@@ -145,7 +153,7 @@ $(function () {
       },
     ],
     tooltip: {
-      theme: "dark",
+      // theme: "dark",
       fillSeriesColor: false,
     },
   };
@@ -166,18 +174,21 @@ $(function () {
       },
       group: "sparklines",
       fontFamily: "Plus Jakarta Sans', sans-serif",
-      foreColor: "#adb0bb",
+      foreColor: "#fa896b",
     },
     series: [
       {
         name: "Savings",
-        color: "#F9F9FD",
-        data: [2120000, 3104500, 5300000, 12100000],
+        // color: "#F9F9FD",
+        color: "#fa896b",
+        // data: [2120000, 3104500, 5300000, 12100000],
+        data: [83000, 423000, 723000, 4023000],
       },
     ],
 
     xaxis: {
-      categories: ["2020", "2021", "2022", "2023"],
+      // categories: ["2020", "2021", "2022", "2023"],
+      categories: ["2023", "2024", "2025", "2026"],
       labels: {
         show: true,
       },
@@ -201,7 +212,8 @@ $(function () {
       fillOpacity: 1,
     },
     tooltip: {
-      theme: "dark",
+      // theme: "dark",
+      // theme: "light",
       fixed: {
         enabled: true,
         position: "right",
