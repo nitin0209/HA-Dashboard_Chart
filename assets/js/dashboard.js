@@ -8,7 +8,7 @@ $(function () {
 
     chart: {
       type: "bar",
-      height: 115,
+      height: 190,
       offsetX: -15,
       toolbar: { show: false },
       // foreColor: "#f6f9fc",
@@ -23,7 +23,7 @@ $(function () {
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: "35%",
+        columnWidth: "38%",
         borderRadius: [6],
         borderRadiusApplication: "end",
         borderRadiusWhenStacked: "all",
@@ -114,7 +114,7 @@ $(function () {
     series: [4500, 5500],
     labels: ["Retrofit work", "Good condition"],
     chart: {
-      width: 185,
+      width: 225,
       type: "pie",
       fontFamily: "Plus Jakarta Sans', sans-serif",
       foreColor: "#adb0bb",
@@ -168,7 +168,7 @@ $(function () {
     chart: {
       id: "sparkline3",
       type: "area",
-      height: 120,
+      height: 190,
       sparkline: {
         enabled: true,
       },
