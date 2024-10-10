@@ -175,6 +175,7 @@ $(function () {
         data: [2120000, 3104500, 5300000, 12100000],
       },
     ],
+
     xaxis: {
       categories: ["2020", "2021", "2022", "2023"],
       labels: {
@@ -183,16 +184,21 @@ $(function () {
     },
     stroke: {
       curve: "smooth",
-      width: 2,
+      width: 3,
     },
     fill: {
       colors: ["#f3feff"],
       type: "solid",
       opacity: 0.05,
     },
-
     markers: {
-      size: 1,
+      size: 3,
+      colors: ["#fa896b"],
+      strokeColors: "#fa892a",
+      strokeWidth: 2,
+      strokeOpacity: 0.9,
+      strokeDashArray: 0,
+      fillOpacity: 1,
     },
     tooltip: {
       theme: "dark",
@@ -209,7 +215,6 @@ $(function () {
         show: true,
       },
     },
-    
   };
   new ApexCharts(document.querySelector("#saving"), earning).render();
 });
