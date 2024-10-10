@@ -104,7 +104,7 @@ $(function () {
   // =====================================
   var breakup = {
     color: "#adb5bd",
-    series: [54421, 70799],
+    series: [55421, 70799],
     labels: ["Retrofit work", "Good condition"],
     chart: {
       width: 180,
