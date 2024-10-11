@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SMART Bundle: Potential Savings Analysis | Dashboard</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../assets/images/logos/favicon.png"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.min.css" />
+    <style>
+      .statistics .box i {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+      }
+
+      .statis .box {
+        position: relative;
+        overflow: hidden;
+        border-radius: 3px;
+      }
+
+      .statis .box h3:after {
+        content: "";
+        height: 2px;
+        width: 70%;
+        margin: auto;
+        background-color: rgba(255, 255, 255, 0.12);
+        display: block;
+        margin-top: 10px;
+      }
+
+      .statis .box i{
+        position: absolute;
+        height: 70px;
+        width: 70px;
+        font-size: 22px;
+        padding: 15px;
+        top: -25px;
+        left: -25px;
+        background-color: rgba(255, 255, 255, 0.15);
+        line-height: 60px;
+        text-align: right;
+        border-radius: 50%;
+      }
+      .statis .box img{
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+
+      .statis h3 {
+        color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
+      }
+
+      .statis .row {
+        justify-content: space-around;
+      }
+
+      .counter {
+        transition: transform 0.3s;
+        font-size: 1.9rem;
+        /* font-weight: 600; */
+        font-weight: 800;
+      }
+
+      .counter span {
+        display: inline-block;
+        transition: transform 0.3s;
+      }
+      .lead {
+        /* font-size: 1.09775rem; */
+        font-size: 0.7775rem;
+        font-weight: 400;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--  Body Wrapper -->
+    <div
+      class="page-wrapper"
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin6"
+      data-sidebartype="full"
+      data-sidebar-position="fixed"
+      data-header-position="fixed"
+    >
+      <!-- Sidebar Start -->
+      <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div>
+          <div
+            class="brand-logo d-flex align-items-center justify-content-between"
+          >
+            <div
+              class="close-btn d-xl-none d-block sidebartoggler cursor-pointer"
+              id="sidebarCollapse"
+            >
+              <i class="ti ti-x fs-8"></i>
+            </div>
+          </div>
+          <!-- Sidebar navigation-->
+          <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+            <ul id="sidebarnav">
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu">Home</span>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./sample-page-8.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="ti ti-layout-dashboard"></i>
+                  </span>
+                  <span class="hide-menu">Dashboard</span>
+                </a>
+              </li>
+
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu">AUTH</span>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="../index.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="ti ti-logout"></i>
+                  </span>
+                  <span class="hide-menu">Logout</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+      </aside>
+      <!--  Sidebar End -->
+      <!--  Main wrapper -->
+      <div class="body-wrapper">
+        <header class="app-header">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <ul class="navbar-nav">
+              <li class="nav-item d-block d-xl-none">
+                <a
+                  class="nav-link sidebartoggler nav-icon-hover"
+                  id="headerCollapse"
+                  href="javascript:void(0)"
+                >
+                  <i class="ti ti-menu-2"></i>
+                </a>
+              </li>
+              <li class="nav-item d-none">
+                <a class="nav-link nav-icon-hover" href="javascript:void(0)">
+                  <i class="ti ti-bell-ringing"></i>
+                  <div class="notification bg-primary rounded-circle"></div>
+                </a>
+              </li>
+            </ul>
+            <div
+              class="navbar-collapse justify-content-end px-0"
+              id="navbarNav"
+            >
+              <ul
+                class="navbar-nav flex-row ms-auto align-items-center justify-content-end"
+              >
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link nav-icon-hover"
+                    href="javascript:void(0)"
+                    id="drop2"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="../assets/images/profile/user-1.jpg"
+                      alt=""
+                      width="35"
+                      height="35"
+                      class="rounded-circle"
+                    />
+                  </a>
+                  <div
+                    class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
+                    aria-labelledby="drop2"
+                  >
+                    <div class="message-body">
+                      <a
+                        href="../index.html"
+                        class="btn btn-outline-primary mx-3 mt-2 d-block"
+                        >Logout</a
+                      >
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+        <div class="container-fluid">
+          <div class="card">
+            <div class="card-head">
+              <section class="statistics mt-4">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <div
+                      class="box d-flex rounded-2 align-items-center mb-4 mb-lg-0 p-3"
+                    >
+                      <i
+                        class="ti ti-home h1 text-center bg-success rounded-circle text-bg-dark"
+                      ></i>
+                      <div class="ms-3">
+                        <div class="d-flex align-items-center">
+                          <h3 class="mb-0 counter" data-target="10000">0</h3>
+                          <span class="d-block ms-2">Properties</span>
+                        </div>
+                        <p class="fs-normal mb-0">
+                          Properties with Smart Meter
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div
+                      class="box d-flex rounded-2 align-items-center mb-4 mb-lg-0 p-3"
+                    >
+                      <i
+                        class="ti ti-building-factory h1 text-center bg-danger rounded-circle text-bg-dark"
+                      ></i>
+                      <div class="ms-3">
+                        <div class="d-flex align-items-center">
+                          <!-- <h3 class="mb-0">3,240 </h3> -->
+                          <h3 class="mb-0 counter" data-target="27000">0</h3><sub>(Tons)</sub>
+                          <span class="d-block ms-2"
+                            >CO<sub>2</sub> Generated</span
+                          >
+                        </div>
+                        <p class="fs-normal mb-0">Smart Meter data only</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="box d-flex rounded-2 align-items-center p-3">
+                      <i
+                        class="ti ti-currency-pound h1 text-center bg-warning rounded-circle text-bg-dark"
+                      ></i>
+                      <div class="ms-3">
+                        <div class="d-flex align-items-center">
+                          <!-- <h3 class="mb-0">2.9M</h3> -->
+                          <h3 class="mb-0 counter" data-target="20700000">0</h3>
+                          <span class="d-block ms-2">Cost of Energy</span>
+                        </div>
+                        <p class="fs-normal mb-0">Smart Meter data only</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+              </section>
+            </div>
+            <div class="card-body pt-2">
+              <div class="title text-center display-6">
+                SMART Bundle: Potential Savings Analysis
+              </div>
+              <div class="row">
+                <!-- <section class="statis mt-4 text-center">
+                  <div class="row">
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                      <div class="box">
+                        <div id="breakup"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                      <div class="box">
+                        <div id="chart"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                      <div class="box">
+                        <div id="saving"></div>
+                      </div>
+                    </div>
+                  </div>
+                </section> -->
+                <section class="statis mt-4 text-center">
+                  <div class="row">
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                      <div class="box shadow p-3">
+                        <i class="ti ti-home-up"></i>
+                        <!-- <h3>554</h3> -->
+                        <h3 class="counter" data-target="4500">0</h3>
+                        <div id="breakup"></div>
+                        <br />
+                        <p class="lead">Properties requiring Retrofit work</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                      <div class="box shadow p-3">
+                        <i class="ti ti-plant"></i>
+                        <!-- <h3>2,100</h3> -->
+                        <h3><span class="counter" data-target="6255"></span> (Tons)</h3>
+                        <div id="chart"></div>
+                        <p class="lead">
+                          Potential CO<sub>2</sub> Saving per year (Tons)
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                      <div class="box shadow p-3">
+                        <i class="ti ti-currency-pound"></i>
+                        <!-- <h3>1.2M</h3> -->
+                        <h3 class="counter" data-target="4023000">0</h3>
+                        <div id="saving"></div>
+                        <br />
+                        <p class="lead">
+                          Potential Energy cost saving per year
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="statis mt-4 text-center">
+                  <div class="row">
+                    <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                      <div class="box shadow p-3">
+                        <i class="ti ti-wall"></i>
+                        <!-- <h3>554</h3> -->
+                        <h3 class="counter" data-target="5300">0</h3>
+                        <br />
+                        <p class="lead">Solid Wall Properties With Loft</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                      <div class="box shadow p-3">
+                        <i class="ti ti-assembly"></i>
+                        <!-- <h3>754</h3> -->
+                        <h3 class="counter" data-target="4450">0</h3>
+                        <br />
+                        <p class="lead">Cavity Wall Properties with Loft</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                      <div class="box shadow p-3">
+                        <i class="ti ti-building"></i>
+                        <!-- <h3>245</h3> -->
+                        <h3 class="counter" data-target="250">0</h3>
+                        <br />
+                        <p class="lead">Number of flats</p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="statis mt-4 text-center">
+                  <div class="row">
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                      <div class="box shadow p-3">
+                        <!-- <img src="../assets/images/logos/energy-class.svg" alt="" height="25" width="25" class=""> -->
+                        <i class="ti ti-home-eco"></i>
+                        <!-- <h3>245</h3> -->
+                        <h3 class="counter" data-target="800">0</h3>
+                        <br />
+                        <p class="lead">
+                          Properties with EPC ratings between A & D
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                      <div class="box shadow p-3">
+                        <i class="ti ti-home-eco"></i>
+                        <!-- <img src="../assets/images/logos/energy-class.svg" alt="" height="25" width="25" class=""> -->
+
+                        <!-- <h3>454</h3> -->
+                        <h3 class="counter" data-target="8000">0</h3>
+                        <br />
+                        <p class="lead">
+                          Properties with EPC <br> ratings E
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                      <div class="box shadow p-3">
+                        <i class="ti ti-home-eco"></i>
+                        <!-- <img src="../assets/images/logos/energy-class.svg" alt="" height="25" width="25" class=""> -->
+
+                        <!-- <h3>654</h3> -->
+                        <h3 class="counter" data-target="1200">0</h3>
+                        <br />
+                        <p class="lead">
+                          Properties with EPC <br />
+                          ratings F
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <script src="../assets/js/app.min.js"></script>
+    <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+    <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+    <!-- <script src="../assets/js/dashboard.js"></script> -->
+
+    <script>
+      function formatNumber(num) {
+        if (num >= 1e6) {
+          return (num / 1e6).toFixed(1) + "M";
+        } else if (num >= 1e3) {
+          return num.toLocaleString();
+        }
+        return num.toString();
+      }
+
+      function animateCount($element, targetNumber, duration) {
+        const startNumber = 0;
+        const startTime = performance.now();
+
+        function updateCount(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const currentNumber = Math.floor(
+            startNumber + progress * (targetNumber - startNumber)
+          );
+
+          $element.text(formatNumber(currentNumber));
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCount);
+          }
+        }
+
+        requestAnimationFrame(updateCount);
+      }
+
+      $(document).ready(function () {
+        $(".counter").each(function () {
+          const target = Number($(this).data("target"));
+          animateCount($(this), target, 1000);
+        });
+      });
+      $(function () {
+        // =====================================
+        // Profit
+        // =====================================
+        var chart = {
+          // series: [{ name: "Saving this year:", data: [9520, 12400, 18000, 21000] }],
+          series: [
+            { name: "Saving this year:", data: [809, 2000, 3268, 6255] },
+          ],
+
+          chart: {
+            type: "bar",
+            height: 130,
+            offsetX: -15,
+            toolbar: { show: false },
+            // foreColor: "#f6f9fc",
+            foreColor: "lightgrey",
+            fontFamily: "inherit",
+            sparkline: { enabled: false },
+          },
+
+          colors: ["#13deb9"],
+
+          plotOptions: {
+            bar: {
+              horizontal: false,
+              columnWidth: "38%",
+              borderRadius: [6],
+              borderRadiusApplication: "end",
+              borderRadiusWhenStacked: "all",
+            },
+          },
+          markers: { size: 0 },
+
+          dataLabels: {
+            enabled: false,
+          },
+
+          legend: {
+            show: false,
+          },
+
+          /* grid: {
+      borderColor: "rgba(0,0,0,0.1)",
+      strokeDashArray: 3,
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+    }, */
+
+          grid: {
+            show: false,
+          },
+
+          xaxis: {
+            show: false,
+            type: "categories",
+            // categories: ["2020", "2021", "2022", "2023"],
+            categories: ["2023", "2024", "2025", "2026"],
+            labels: {
+              style: { cssClass: "red--text lighten-1--text fill-color" },
+            },
+          },
+
+          yaxis: {
+            show: false,
+            min: 0,
+            // max: 24000,
+            max: 7000,
+            tickAmount: 4,
+            labels: {
+              style: {
+                // cssClass: "red--text lighten-1--text fill-color",
+              },
+              style: {
+                // color: "#ffffff",
+                // color: "#ffffff",
+              },
+            },
+          },
+          stroke: {
+            show: false,
+            width: 3,
+            lineCap: "butt",
+            colors: ["transparent"],
+          },
+
+          // tooltip: { theme: "dark" },
+
+          responsive: [
+            {
+              breakpoint: 600,
+              options: {
+                plotOptions: {
+                  bar: {
+                    borderRadius: 3,
+                  },
+                },
+              },
+            },
+          ],
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), chart);
+        chart.render();
+
+        // =====================================
+        // Breakup
+        // =====================================
+        var breakup = {
+          color: "#adb5bd",
+          // series: [55421, 70799],
+          series: [4500, 5500],
+          labels: ["Retrofit work", "Good condition"],
+          chart: {
+            width: 185,
+            type: "pie",
+            fontFamily: "Plus Jakarta Sans', sans-serif",
+            foreColor: "#adb0bb",
+          },
+          plotOptions: {
+            pie: {
+              startAngle: 0,
+              endAngle: 360,
+              donut: {
+                size: "65%",
+              },
+            },
+          },
+          stroke: {
+            show: false,
+          },
+
+          dataLabels: {
+            enabled: false,
+          },
+
+          legend: {
+            show: false,
+          },
+          // colors: ["#fa896b", "#F9F9FD"],
+          colors: ["#5d87ff", "lightgrey"],
+
+          responsive: [
+            {
+              breakpoint: 991,
+              options: {
+                chart: {
+                  width: 150,
+                },
+              },
+            },
+          ],
+          tooltip: {
+            // theme: "dark",
+            fillSeriesColor: false,
+          },
+        };
+
+        var chart = new ApexCharts(document.querySelector("#breakup"), breakup);
+        chart.render();
+
+        // =====================================
+        // Earning
+        // =====================================
+        var earning = {
+          chart: {
+            id: "sparkline3",
+            type: "area",
+            height: 120,
+            sparkline: {
+              enabled: true,
+            },
+            group: "sparklines",
+            fontFamily: "Plus Jakarta Sans', sans-serif",
+            foreColor: "#fa896b",
+          },
+          series: [
+            {
+              name: "Savings",
+              // color: "#F9F9FD",
+              color: "#ffae1f",
+              // data: [2120000, 3104500, 5300000, 12100000],
+              data: [83000, 423000, 723000, 4023000],
+            },
+          ],
+
+          xaxis: {
+            // categories: ["2020", "2021", "2022", "2023"],
+            categories: ["2023", "2024", "2025", "2026"],
+            labels: {
+              show: true,
+            },
+          },
+          stroke: {
+            curve: "smooth",
+            width: 3,
+          },
+          fill: {
+            colors: ["#f3feff"],
+            type: "solid",
+            opacity: 0.05,
+          },
+          markers: {
+            size: 3,
+            colors: ["#fa896b"],
+            strokeColors: "#fa892a",
+            strokeWidth: 2,
+            strokeOpacity: 0.9,
+            strokeDashArray: 0,
+            fillOpacity: 1,
+          },
+          tooltip: {
+            // theme: "dark",
+            // theme: "light",
+            fixed: {
+              enabled: true,
+              position: "right",
+            },
+            y: {
+              formatter: (value) => {
+                return `${(value / 1000000).toFixed(1)}M`;
+              },
+            },
+            x: {
+              show: true,
+            },
+          },
+        };
+        new ApexCharts(document.querySelector("#saving"), earning).render();
+      });
+    </script>
+  </body>
+</html>
